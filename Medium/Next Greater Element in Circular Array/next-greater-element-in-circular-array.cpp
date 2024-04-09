@@ -12,19 +12,18 @@ class Solution {
         vector<long long> ans(n,-1);
        stack<int> st;
        
-       //representing the circular array into straight array
-       for(int i=0;i<n;i++){
-           arr.push_back(arr[i]);
-       }
-       
-       //main code
-       for(int i=0;i<2*n;i++){
-           while(!st.empty() && arr[i]>arr[st.top()]){
-               ans[st.top()]=arr[i];
+       //WAY 2 :- WITHOUT INCREASING THE LENGTH OF THE GIVEN ARRAY
+       int index=0;
+       int iteration=2*n;
+       while(iteration--){
+           while(!st.empty() && arr[index]>arr[st.top()]){
+               ans[st.top()]=arr[index];
                st.pop();
            }
+           st.push(index);
            
-           st.push(i%n);
+           //INCREMENTING THE INDEX SUCH THAT IT WILL FOLLOW THE CIRCULAR PROPERTY OF ARRAY
+           index=(index+1)%n;
        }
        
        return ans;
