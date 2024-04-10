@@ -1,28 +1,25 @@
 class Solution {
 public:
     int minAddToMakeValid(string s) {
-       //edge case  where  string is empty
-       if(s.length()==0){
-        return 0;
+       //edge case  where  string has only one element
+       if(s.length()==1){
+        return 1;
        } 
 
-       //creating stack
-       stack<char> stk;
-       for(char ch:s){
-        if(stk.empty() || ch=='('){
-            stk.push(ch);
+       //solving with constant space complexity
+       int i=0,j=1;
+       while(s.length() && j<s.length()){
+        if(s[i]=='(' && s[j]==')'){
+            s.erase(i,2);
+            i=0;j=1;
         }
         else{
-            if(stk.top()=='('){
-                stk.pop();
-            }
-            else{
-                stk.push(ch);
-            }
+            i++;
+            j++;
         }
-       }
 
-       return stk.size();
-       
+       }
+       return s.length();
+
     }
 };
