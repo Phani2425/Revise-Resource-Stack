@@ -1,5 +1,8 @@
 <h2><a href="https://leetcode.com/problems/largest-rectangle-in-histogram">84. Largest Rectangle in Histogram</a></h2><h3>Hard</h3><hr><p>Given an array of integers <code>heights</code> representing the histogram&#39;s bar height where the width of each bar is <code>1</code>, return <em>the area of the largest rectangle in the histogram</em>.</p>
 
+<p><a href="[https://leetcode.com/problems/largest-rectangle-in-histogram](https://takeuforward.org/data-structure/area-of-largest-rectangle-in-histogram/)">SOLUTION</a></p>
+
+
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/01/04/histogram.jpg" style="width: 522px; height: 242px;" />
