@@ -20,8 +20,9 @@ class Solution{
     int minEle;
     stack<int> s;
     public:
-        //STACK FOR STORING MINIMUM VALUE AT EACH POINT
-       stack<int> minimum;
+    
+    //HERE I WILL USE THE CONCEPT OF STORING TWO  ELEMENT AT  ONE PLACE SUCH THA I CAN RETRIVE ONE OF THEM BY MODULUS OPERATOR AND ANOTHER ONE BY DIVISION OPERATION
+    //HERE I AM RETRIVING THE PUSHED NUMBER BY DIVIDING THE STORED  NUMBER BY 101 AND RETRIVING THE MINIMUM VALUE BY DOING MODULUS OF THE STORED NUMBER WITH 101
        
        /*returns min element from stack*/
        int getMin(){
@@ -30,7 +31,7 @@ class Solution{
                return -1;
            }
            else{
-               return minimum.top();
+               return s.top()%101;
            }
        }
        
@@ -41,9 +42,8 @@ class Solution{
                return -1;
            }
            else{
-               int ans=s.top();
+               int ans=s.top()/101;
                s.pop();
-               minimum.pop();
                return ans;
            }
        }
@@ -52,14 +52,17 @@ class Solution{
        void push(int x){
            
          if(s.empty()){
-             minimum.push(x);
+             s.push(x*101+x);
          } 
          else{
-             minimum.push(min(minimum.top(),x));
+             int minimum=min(x,s.top()%101);
+             s.push(x*101+minimum);
          }
-         s.push(x);
+         
            
        }
+
+             //here space complexity = o(1)
 };
 
 //{ Driver Code Starts.
