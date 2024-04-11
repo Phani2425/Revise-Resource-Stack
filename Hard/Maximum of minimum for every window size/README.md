@@ -1,4 +1,9 @@
-<h2><a href="https://www.geeksforgeeks.org/problems/maximum-of-minimum-for-every-window-size3453/1?page=1&difficulty%5B%5D=2&category%5B%5D=Stack&sortBy=submissions">Maximum of minimum for every window size</a></h2><h3>Difficulty Level : Hard</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an integer array. The task is to find the maximum of the minimum of every window size in the array.<br>
+<h2><a href="https://www.geeksforgeeks.org/problems/maximum-of-minimum-for-every-window-size3453/1?page=1&difficulty%5B%5D=2&category%5B%5D=Stack&sortBy=submissions">Maximum of minimum for every window size</a></h2><h3>Difficulty Level : Hard</h3>
+
+<a href="https://www.techgeekbuzz.com/blog/find-maximum-of-minimum-for-every-window-size-in-a-given-array/">SOLUTION WITH EXPLANATION</a>
+
+
+<hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an integer array. The task is to find the maximum of the minimum of every window size in the array.<br>
 <strong>Note:</strong> Window size varies from 1 to the size of the Array.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
