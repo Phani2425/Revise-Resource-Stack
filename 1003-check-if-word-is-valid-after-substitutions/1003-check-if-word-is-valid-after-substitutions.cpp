@@ -6,7 +6,7 @@ public:
             return false;
         }
 
-        vector<char> v;//WE CAN USE STACK IN PLACE OF VECTOR
+        vector<char> v;
 
         for(char ch : s){
             if(ch=='c' && v.size()>1 && v[v.size()-1]=='b' && v[v.size()-2]=='a'){
