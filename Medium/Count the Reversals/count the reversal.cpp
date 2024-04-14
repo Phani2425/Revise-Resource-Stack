@@ -47,7 +47,7 @@ int countRev (string s)
     
     //checking wheather they can be valid (if they are odd in count then they can never be valid as only even count brackets have chance of becoming valid)
     if(st.size()%2 != 0){
-        return -1;
+        return -1;//we can check this validity from starting by cheking the length of the input string in this same way
     }
     //if nothing returns then they can become valid 
     //transfering them to a string for traversing on them and count the no of reversal we can make to make them valid
