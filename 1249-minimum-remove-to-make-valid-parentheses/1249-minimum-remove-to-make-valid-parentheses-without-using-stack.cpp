@@ -36,9 +36,12 @@ public:
             }
         }
 
-        if(open==0){
+
+        if(open==0){  //agar open ka count zero hai matlab abhi open aur close bracket ka count same hai kyuki jo bhi jyada close brackets the unko hamne delete kardia
             return result;
         }
+
+        //agar open abhi 0 nehi hua hai iska matlab string me open ka count close se jyada tha means case 2
         
 
         //CASE 2
