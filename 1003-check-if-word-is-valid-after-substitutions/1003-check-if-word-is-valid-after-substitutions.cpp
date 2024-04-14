@@ -1,26 +1,15 @@
 class Solution {
 public:
-//RECURSIVE APPROACH
-//yaha pe basically ham s se abc ko bar bar hatakar t form karne ki kosis karrahe hai
+//ITERATIVE APPROACH
+//yaha pe basically ham string s se abc ko bar bar hatakar t form karne ki kosis karrahe hai
     bool isValid(string s) {
-     //BASE CASE
-     if(s.length()==0){//agar string s khali hogaya matalab wo t me convert ho gaya
-        return true;
-     }
+      while(s.length()>0 && s.find("abc") != string::npos){
+          s.erase( s.find("abc") , 3 );
+      }
 
-     //RECURSIVE CASE
-     else{
-        int fnd=s.find("abc");
-        if(fnd == string::npos){  //agar abc milgaya to fnd uska index store karega then ham baki string ko abc ke left aur right me todenge aur recursion ko call karenge
-           return false;
-        }
-        else{
-            s.erase(fnd,3);
-            return isValid(s);
-        }
-        
-        // //agar kisi point pe string s me "abc" nehi mila to else ke andar wala if nehi chalega to phir recursive call nehi hoga aur end me controll ayega aur false return hoga
-        // return false;
-     }
+      if(s.length()==0){
+        return true;
+      }
+      return false;
     }
 };
