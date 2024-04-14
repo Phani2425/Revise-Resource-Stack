@@ -1,10 +1,11 @@
 class Solution {
 public:
     string minRemoveToMakeValid(string s) {
-        //THIS STACK WILL STORE THE BRACKETS TO CHECK WHEATHER THEY ARE VALID OR NOT
-        stack<char> bracket;
-        //THIS STACK WILL STORE THE INDEX VALUES OF THOSE BRACKETS WHO ARE MAKING THE PARENTHESIS INVALID
-        //AT LAST WE WILL ERASE THOSE BRACKETS WHOSE INDEX IS STORED IN THIS STACK AND MAKE THE GIVEN PARENTHESES VALID
+        //here i noticed i can solve this by using onne stack only where ii will store index of brackkets
+
+        //HERE ONE SINGLE STACK WILL STORE THE INDEX OF BRACKETS TO CHECK WHEATHER THEY ARE VALID OR NOT
+        //AT END OF THE LOOP THIS STACK WILL STORE THE INDEX VALUES OF THOSE BRACKETS WHO ARE MAKING THE PARENTHESIS INVALID
+        //AT LAST WE WILL ERASE THOSE BRACKETS WHOSE INDEX IS REAMINED IN THIS STACK AND NOT GOT CANCELLED WITH ANYONE AND BY ERASING THEM WE WILL MAKE THE GIVEN PARENTHESES VALID
         stack<int> index;
 
         int len=s.length();
@@ -13,24 +14,21 @@ public:
                 continue;
             }
             else{
-                if(bracket.empty() || s[i]=='('){ //if anyone condition is true then this will run
-                    bracket.push(s[i]);
+                if(index.empty() || s[i]=='('){ //if anyone condition is true then this will run
                     index.push(i);
                 }
                 else{ //means bracket is closing
-                    if(bracket.top()=='('){
-                       bracket.pop();
+                    if(s[index.top()]=='('){
                        index.pop();
                     }
                     else{
-                        bracket.push(')');
                         index.push(i);
                     }
                 }
             }
         }
 
-       if(bracket.empty()){
+       if(index.empty()){
           //means parentheses is already valid
           return s;
        } 
