@@ -52,14 +52,6 @@ public:
     }
 };
 
-// stack<string> BrowserHistory::bck; // Definition of static member variable bck
-// stack<string> BrowserHistory::fore; // Definition of static member variable fore
-
-/*This error typically occurs when you declare a static member variable in a class but fail to define it outside the class declaration. 
-Static member variables need to be defined separately outside the class declaration to allocate memory for them.*/
-/*Place these definitions at the global scope in the source file where you implement the member functions of the BrowserHistory class.
- This ensures that memory is allocated for the static member variables, resolving the undefined symbol error during compilation.*/
-
 /**
  * Your BrowserHistory object will be instantiated and called as such:
  * BrowserHistory* obj = new BrowserHistory(homepage);
