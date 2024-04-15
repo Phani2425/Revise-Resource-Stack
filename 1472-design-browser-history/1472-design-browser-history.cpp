@@ -1,9 +1,10 @@
 class BrowserHistory {
-    static stack<string> bck; //STORES BACKWARD HISTORY
-    static stack<string> fore; //STORES FORWARD HISTORY
+    stack<string> bck; //STORES BACKWARD HISTORY
+    stack<string> fore; //STORES FORWARD HISTORY
 public:
     BrowserHistory(string homepage) {
-        bck.push(homepage);
+        string s= homepage;
+        bck.push(s);
     }
     
     void visit(string url) {
@@ -20,6 +21,7 @@ public:
             while(bck.size() != 1){
                 fore.push(bck.top());
                 bck.pop();
+                
             }
         }
         else{
@@ -50,8 +52,8 @@ public:
     }
 };
 
-stack<string> BrowserHistory::bck; // Definition of static member variable bck
-stack<string> BrowserHistory::fore; // Definition of static member variable fore
+// stack<string> BrowserHistory::bck; // Definition of static member variable bck
+// stack<string> BrowserHistory::fore; // Definition of static member variable fore
 
 /*This error typically occurs when you declare a static member variable in a class but fail to define it outside the class declaration. 
 Static member variables need to be defined separately outside the class declaration to allocate memory for them.*/
