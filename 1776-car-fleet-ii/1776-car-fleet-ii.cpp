@@ -48,3 +48,35 @@ public:
         return ans;
     }
 };
+
+/*
+
+1. **Initialization**: 
+    - The vector `ans` is initialized to store the collision times of the cars. Each index `i` in the `ans` vector corresponds to the `i-th` car in the `cars` array.
+    - We initialize all elements of `ans` to `-1` to indicate that initially, no car collides with any other car.
+
+2. **Iteration Backwards through the Cars**:
+    - We iterate through the cars array backwards. This approach helps us calculate the collision time of each car with the car ahead of it more efficiently.
+    - Starting from the last car allows us to consider each car in the context of the cars ahead of it, simulating the real-world scenario where cars can only collide with those in front of them.
+
+3. **Updating the Stack**:
+    - We use a stack `st` to keep track of the cars that are ahead of the current car and potentially collide with it.
+    - By iterating backwards and updating the stack, we ensure that we only consider cars ahead of the current car when calculating collision times.
+    - If the speed of the current car is less than or equal to the speed of the car at the top of the stack, it indicates that the current car will not collide with the car at the top of the stack. Hence, we pop cars from the stack until the condition is no longer satisfied.
+
+4. **Calculating Collision Time**:
+    - For each car remaining in the stack after updating, we calculate the collision time between the current car and the car at the top of the stack.
+    - We use the formula `(position of car at stack top - position of current car) / (speed of current car - speed of car at stack top)` to calculate the collision time.
+    - If the collision time is less than or equal to the collision time stored for the car at the top of the stack, or if the collision time for the car at the top of the stack is `-1`, we update the collision time for the current car and break the loop.
+    - This process ensures that we only update the collision time for the current car if it collides with the car at the top of the stack before colliding with any other car ahead of it.
+
+5. **Updating the Stack and Returning the Answer**:
+    - After calculating the collision time for the current car, we push its index onto the stack.
+    - Once we have processed all cars, we return the `ans` vector containing the collision times.
+
+**Reasons for Using a Stack**:
+- **Efficiently Track Potential Collisions**: By using a stack, we efficiently keep track of the cars that are ahead of the current car and potentially collide with it.
+- **Optimize Collision Time Calculation**: Iterating backwards and updating the stack allows us to consider only the relevant cars for collision time calculation, avoiding unnecessary calculations for cars that are not potential collision candidates.
+- **Simplify Collision Time Updates**: The stack helps simplify the process of updating collision times for each car by considering only the cars ahead of it in the calculation.
+
+Overall, using a stack in this manner optimizes the collision time calculation process and efficiently solves the problem by considering each car in the context of the cars ahead of it.*/
