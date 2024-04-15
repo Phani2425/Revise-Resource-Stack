@@ -1,10 +1,11 @@
+/*..........THIS CAN BE SOLVED BY LINKEDLIST ALSO.........*/
+
 class BrowserHistory {
     stack<string> bck; //STORES BACKWARD HISTORY
     stack<string> fore; //STORES FORWARD HISTORY
 public:
     BrowserHistory(string homepage) {
-        string s= homepage;
-        bck.push(s);
+        bck.push(homepage);
     }
     
     void visit(string url) {
